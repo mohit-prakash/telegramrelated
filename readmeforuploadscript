@@ -1,0 +1,6 @@
+search directory is folder from where it will pick all files.
+If we enter y for caption then it will pick filename as caption.
+Folder name is only for searching purpose or view purpose.
+It will for other user as well. replace MohitCloud with your id. It is the same when you are setting tglogin.
+If you don't enter username it will save it to saved messages else it will send it to that user. (public group/public channel/specific user having username)
+Reference: https://pypi.org/project/telegram-cloud/#description
