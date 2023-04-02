@@ -31,7 +31,7 @@ for entry in "$search_dir"/*
 do
   path=$entry
   size_dir=${#search_dir}
-  if [ $iscaption == $yes]
+  if [ $iscaption == $yes ]
   then
     caption=${path:$size_dir+1}
     tgcloud --mode upload --name MohitCloud --username "$user" --path "$path" --caption "$caption"
