@@ -1,3 +1,4 @@
+# upload all files in a search directory
 echo "Enter username, leave blank if you want to save in savedmessages!!"
 read user_name
 user="${user_name:=me}"
