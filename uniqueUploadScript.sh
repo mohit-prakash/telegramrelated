@@ -72,6 +72,6 @@ do
     echo "--------------------------------------------------------------------"
   fi
   else
-    echo "$caption already there, no need to upload again!!"
+    echo "$caption already exist!!"
   fi
 done
