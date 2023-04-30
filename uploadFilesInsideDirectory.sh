@@ -12,8 +12,7 @@ maxsize=34
 divisor=2
 cond=1
 count=0
-prevIndex=0
-nextIndex=1
+index=0
 dotIndex=0
 dot="."
 iscaption="${iscaption:=y}"
@@ -49,16 +48,16 @@ do
   #caption we are fetching using substring
   caption=${path:$size_dir+1}
   captionSize=${#caption}
-  while(( $nextIndex<$captionSize ))
+  dotIndex=$captionSize
+  while(( $index<$captionSize ))
   do
-    if [ ${caption:$prevIndex:$nextIndex} == $dot ]
+    if [ ${caption:$index:1} == $dot ]
     then
-      dotIndex=$nextIndex
+      dotIndex=$index
     fi
-    prevIndex=$nextIndex
-    nextIndex=$nextIndex+1
+    index=$(( $index + 1 ))
   done
-  fileName=${caption:0:$captionSize-$dotIndex}
+  fileName=${caption:0:$dotIndex}
   searchOutput=$(tginfo -n MohitCloud -u "$user" -s "$fileName""*")
   num=${searchOutput:0:1}
   if [ $num -eq 0 ]
@@ -66,7 +65,7 @@ do
   echo "--------------------------------------------------------------------"
   echo "$caption is uploading!!"
   echo "--------------------------------------------------------------------"
-  count=$count+1
+  count=$(( $count + 1 ))
   if [[ $count -eq 1  && $fname_size != 0 ]]
   then
     tgsend -n MohitCloud -u "$user" {"${dir_name}",,}
