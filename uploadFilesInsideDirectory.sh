@@ -12,8 +12,8 @@ maxsize=34
 divisor=2
 cond=1
 count=0
-index=0
-dotIndex=0
+# index=0
+# dotIndex=0
 dot="."
 iscaption="${iscaption:=y}"
 yes="y"
@@ -47,18 +47,18 @@ do
   size_dir=${#search_dir}
   #caption we are fetching using substring
   caption=${path:$size_dir+1}
-  captionSize=${#caption}
-  dotIndex=$captionSize
-  while(( $index<$captionSize ))
-  do
-    if [ ${caption:$index:1} == $dot ]
-    then
-      dotIndex=$index
-    fi
-    index=$(( $index + 1 ))
-  done
-  fileName=${caption:0:$dotIndex}
-  searchOutput=$(tginfo -n MohitCloud -u "$user" -s "$fileName")
+  # captionSize=${#caption}
+  # dotIndex=$captionSize
+  # while(( $index<$captionSize ))
+  # do
+  #   if [ ${caption:$index:1} == $dot ]
+  #   then
+  #     dotIndex=$index
+  #   fi
+  #   index=$(( $index + 1 ))
+  # done
+  # fileName=${caption:0:$dotIndex}
+  searchOutput=$(tginfo -n MohitCloud -u "$user" -s "$caption")
   num=${searchOutput:0:1}
   if [ $num -eq 0 ]
   then
