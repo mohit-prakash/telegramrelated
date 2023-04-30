@@ -44,7 +44,7 @@ do
   size_dir=${#search_dir}
   #caption we are fetching using substring
   caption=${path:$size_dir+1}
-  searchOutput=$(tginfo -n MohitCloud -u me -s "$caption")
+  searchOutput=$(tginfo -n MohitCloud -u "$user" -s "$caption")
   num=${searchOutput:0:1}
   if [ $num -eq 0 ]
   then
