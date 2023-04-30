@@ -58,7 +58,7 @@ do
     index=$(( $index + 1 ))
   done
   fileName=${caption:0:$dotIndex}
-  searchOutput=$(tginfo -n MohitCloud -u "$user" -s "$fileName""*")
+  searchOutput=$(tginfo -n MohitCloud -u "$user" -s "$fileName")
   num=${searchOutput:0:1}
   if [ $num -eq 0 ]
   then
